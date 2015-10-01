@@ -19,7 +19,7 @@ public class Delivery {
 	public static void main(String[] args) throws IOException, TimeoutException {
 		int step = Integer.parseInt(args[0]);
 		long sleepTime = Long.parseLong(args[1]);
-		DeliveryConsumer consumer =  new DeliveryConsumer(5, 5000);
+		DeliveryConsumer consumer =  new DeliveryConsumer(step, sleepTime);
 		ExecutorService executor = Executors.newSingleThreadExecutor();
 		executor.execute(consumer);
 		Scanner scanner = new Scanner(System.in);

@@ -48,7 +48,7 @@ public class StockRepository {
 	 */
 	public synchronized boolean applyOrder(Order order) {
 		Log.log("Applying order: " + order.toString());
-		Double quantity = stockMap.get(order.getProductId());
+		Double quantity = stockMap.get(order.getProductId().toString());
 		Log.log("Quantity " + quantity);
 		if (quantity != null && quantity >= order.getQuantity()) {
 			Log.log("Changing value");
